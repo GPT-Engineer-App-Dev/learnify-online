@@ -1,13 +1,36 @@
-import { Box, Button, Container, Flex, Heading, HStack, IconButton, Image, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, Heading, HStack, IconButton, Image, Stack, Text, VStack, Select } from "@chakra-ui/react";
 import { FaRocket, FaStar, FaUser } from "react-icons/fa";
+import { useState } from "react";
 
 const Index = () => {
+  const [language, setLanguage] = useState("en");
+
+  const handleLanguageChange = (event) => {
+    setLanguage(event.target.value);
+  };
+
   return (
     <Container maxW="container.xl" p={0}>
       {/* Navigation Bar */}
       <Flex as="nav" bg="blue.600" color="white" p={4} justifyContent="space-between" alignItems="center">
         <Heading size="md">LangLearn</Heading>
         <HStack spacing={4}>
+          <Select
+            value={language}
+            onChange={handleLanguageChange}
+            variant="outline"
+            bg="white"
+            color="black"
+            size="sm"
+            width="150px"
+            mr={4}
+          >
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="zh">Chinese</option>
+          </Select>
           <Button variant="link" color="white">Home</Button>
           <Button variant="link" color="white">Features</Button>
           <Button variant="link" color="white">Testimonials</Button>
