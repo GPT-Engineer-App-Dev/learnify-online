@@ -1,6 +1,7 @@
 import { Box, Button, Container, Flex, Heading, HStack, IconButton, Image, Stack, Text, VStack, Select } from "@chakra-ui/react";
 import { FaRocket, FaStar, FaUser } from "react-icons/fa";
 import { useState } from "react";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const Index = () => {
   const [language, setLanguage] = useState("en");
@@ -35,6 +36,7 @@ const Index = () => {
           <Button variant="link" color="white">Features</Button>
           <Button variant="link" color="white">Testimonials</Button>
           <Button variant="link" color="white">Contact</Button>
+          <Button as={Link} to="/dashboard" variant="link" color="white">Dashboard</Button> {/* Add Dashboard link */}
         </HStack>
       </Flex>
 
